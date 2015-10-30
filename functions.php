@@ -41,21 +41,29 @@ function get_sub_menu()
     global $post;
     global $menu_item_id;
 
-    $html = '<ul class="sub_menu">';
+    $menu_items = [];
 
     foreach (wp_get_nav_menu_items('Main Menu') as $menu_item) {
         if ($menu_item->ID == $menu_item_id or $menu_item->menu_item_parent == $menu_item_id) {
-            if ($menu_item->object_id == $post->ID) {
-                $html .= '<li class="selected"><a href="'.$menu_item->url.'">'.$menu_item->title.'</a></li>';
-            } else {
-                $html .= '<li><a href="'.$menu_item->url.'">'.$menu_item->title.'</a></li>';
-            }
+            $menu_items[] = [
+                'url' => $menu_item->url,
+                'title' => $menu_item->title,
+                'selected' => $menu_item->object_id == $post->ID,
+            ];
         }
     }
 
-    $html .= '</ul>';
+    if (count($menu_items) === 1) {
+        return '';
+    }
 
-    return $html;
+    return '<ul class="sub_menu">'.array_reduce($menu_items, function ($html, $item) {
+        $html .= $item['selected'] ? '<li class="selected">' : '<li>';
+        $html .= '<a href="'.$item['url'].'">'.$item['title'].'</a>';
+        $html .= '</li>';
+
+        return $html;
+    }).'</ul>';
 }
 
 // Setup custom theme options
