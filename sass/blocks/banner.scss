@@ -1,0 +1,17 @@
+.banner {
+
+    &.missing {
+        margin-top: 50px;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        outline: solid rgba(255, 255, 255, 0.1) 1px;
+    }
+
+    @media only screen and (min-width: 550px) {
+        margin: 0 0 20px 0;
+    }
+}

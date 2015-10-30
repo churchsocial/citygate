@@ -1,0 +1,70 @@
+.header .quick_links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+
+    li {
+        display: inline-block;
+
+        a {
+            display: inline-block;
+            margin: 0 0 0 5px;
+            padding: 0 15px;
+            height: 32px;
+            color: #ffbdaa;
+            font-family: 'Avenir Black';
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #5b2517;
+            background: rgba(70, 20, 10, 0.6);
+            border-radius: 2px;
+
+            &:hover {
+                background: #421a0f;
+                background: rgba(70, 20, 10, 0.9);
+            }
+        }
+
+        &.facebook,
+        &.twitter {
+            a {
+                padding: 0;
+                width: 35px;
+                text-indent: -9999px;
+                background-image: url(../img/social_media_icons.png);
+            }
+        }
+
+        &.twitter {
+            a {
+                background-position: -35px 0;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 549px) {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 550px) and (max-width: 767px) {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+        position: absolute;
+        top: 25px;
+        right: 10px;
+    }
+}

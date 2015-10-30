@@ -1,0 +1,16 @@
+.header {
+    background: #aa3f28 url("../img/red_texture.png") center;
+    height: 190px;
+
+    .center {
+        height: 190px;
+    }
+
+    @media only screen and (max-width: 549px) {
+        margin: 0;
+    }
+
+    @media only screen and (min-width: 550px) {
+        margin: 0 0 -40px 0;
+    }
+}

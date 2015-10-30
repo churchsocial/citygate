@@ -1,0 +1,20 @@
+.page .content {
+    overflow: hidden;
+    background: #272727 url("../img/dark_fabric_texture.png");
+    outline: solid rgba(255, 255, 255, 0.1) 1px;
+
+    @media only screen and (max-width: 549px) {
+        border: none;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 15px 30px;
+        font-family: 'Avenir Light';
+        color: white;
+        font-size: 27px;
+        line-height: 100%;
+        font-weight: normal;
+        background: #aa3f28 url("../img/red_texture.png") center;
+    }
+}

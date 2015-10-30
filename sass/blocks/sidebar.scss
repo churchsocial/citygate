@@ -1,0 +1,39 @@
+.sidebar {
+    background: #8a8a8a url("../img/grey_noise_texture.png");
+    outline: solid rgba(255, 255, 255, 0.1) 1px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @media only screen and (max-width: 549px) {
+        padding: 0 15px 30px 15px;
+        margin: 0;
+        text-align: center;
+        border: none;
+    }
+
+    @media only screen and (min-width: 550px) and (max-width: 767px) {
+        padding: 0 25px 30px 25px;
+        margin: 0 0 20px 0;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        float: left;
+        width: 190px;
+        padding: 0 20px 30px 20px;
+        margin: 0 0 0 20px;
+    }
+
+    @media only screen and (min-width: 980px) and (max-width: 1219px) {
+        float: left;
+        width: 260px;
+        padding: 0 25px 30px 25px;
+        margin: 0 0 0 20px;
+    }
+
+    @media only screen and (min-width: 1220px) {
+        float: left;
+        width: 280px;
+        padding: 0 25px 30px 25px;
+        margin: 0 0 0 20px;
+    }
+}

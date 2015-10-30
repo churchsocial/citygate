@@ -1,0 +1,39 @@
+.copyright {
+    clear: both;
+    overflow: hidden;
+    padding: 15px 0 25px 0;
+
+    p {
+        margin: 0;
+        color: #898989;
+        font-size: 12px;
+        line-height: 100%;
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 549px) {
+        text-align: center;
+
+        .church {
+            margin: 0 0 5px 0;
+        }
+    }
+
+    @media only screen and (min-width: 550px) {
+        .church {
+            float: left;
+        }
+
+        .software {
+            float: right;
+        }
+    }
+}
