@@ -110,13 +110,23 @@ add_action('customize_register', function ($wp_customize) {
         ])
     );
 
+    $wp_customize->add_setting('instagram');
+    $wp_customize->add_control(
+        new WP_Customize_Control($wp_customize, 'instagram', [
+            'label' => 'Instagram',
+            'section' => 'social_media',
+            'settings' => 'instagram',
+            'priority' => 3,
+        ])
+    );
+
     $wp_customize->add_setting('member_login');
     $wp_customize->add_control(
         new WP_Customize_Control($wp_customize, 'member_login', [
             'label' => 'Member login',
             'section' => 'social_media',
             'settings' => 'member_login',
-            'priority' => 3,
+            'priority' => 4,
         ])
     );
 

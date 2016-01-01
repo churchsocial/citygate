@@ -5,11 +5,12 @@
     font-size: 0;
 
     li {
-        display: inline-block;
+        display: block;
+        float: left;
+        margin: 0 0 0 5px;
 
         a {
             display: inline-block;
-            margin: 0 0 0 5px;
             padding: 0 15px;
             height: 32px;
             color: #ffbdaa;
@@ -22,6 +23,7 @@
             background: #5b2517;
             background: rgba(70, 20, 10, 0.6);
             border-radius: 2px;
+            outline: none;
 
             &:hover {
                 background: #421a0f;
@@ -29,19 +31,13 @@
             }
         }
 
-        &.facebook,
-        &.twitter {
+        &.social {
             a {
-                padding: 0;
+                box-sizing: border-box;
+                padding: 3px 0 0 0;
                 width: 35px;
-                text-indent: -9999px;
-                background-image: url(../img/social_media_icons.png);
-            }
-        }
-
-        &.twitter {
-            a {
-                background-position: -35px 0;
+                font-size: 20px;
+                text-align: center;
             }
         }
     }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title('|', true, 'right') . bloginfo('name') ?></title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url') ?>/css/all.css" />
+    <link href="<?php bloginfo('template_url') ?>/vendor/socicon/styles.css" rel="stylesheet">
     <?php wp_head() ?>
 </head>
 <body>
@@ -17,13 +18,18 @@
 
         <ul class="quick_links">
             <?php if (get_theme_mod('facebook')){ ?>
-                <li class="facebook">
-                    <a href="<?=get_theme_mod('facebook')?>" target="_blank">Facebook</a>
+                <li class="social">
+                    <a href="<?=get_theme_mod('facebook')?>" target="_blank" class="socicon socicon-facebook"></a>
                 </li>
             <?php } ?>
             <?php if (get_theme_mod('twitter')){ ?>
-                <li class="twitter">
-                    <a href="<?=get_theme_mod('twitter')?>" target="_blank">Twitter</a>
+                <li class="social">
+                    <a href="<?=get_theme_mod('twitter')?>" target="_blank" class="socicon socicon-twitter"></a>
+                </li>
+            <?php } ?>
+            <?php if (get_theme_mod('instagram')){ ?>
+                <li class="social">
+                    <a href="<?=get_theme_mod('instagram')?>" target="_blank" class="socicon socicon-instagram"></a>
                 </li>
             <?php } ?>
             <?php if (get_theme_mod('member_login')){ ?>

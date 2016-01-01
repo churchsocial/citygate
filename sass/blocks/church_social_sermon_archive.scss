@@ -1,0 +1,39 @@
+.church_social_sermon_archive {
+
+    form {
+        button {
+            border: none;
+            border-radius: 3px;
+            background: #ccc;
+            font-family: 'Avenir Black';
+            font-size: 14px;
+            font-weight: bold;
+
+            &:hover {
+                background: white;
+            }
+        }
+    }
+
+    table
+    {
+        margin: 25px 0 0 0;
+
+        th {
+            font-family: 'Avenir Black';
+            color: white;
+        }
+
+        td {
+            border-top: solid 1px rgba(white, .1);
+            padding: 10px 15px 10px 0;
+            font-size: 14px;
+            line-height: 1.2;
+            vertical-align: top;
+
+            &.date {
+                white-space: nowrap;
+            }
+        }
+    }
+}
