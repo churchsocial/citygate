@@ -10,6 +10,7 @@
         margin: 0 0 0 5px;
 
         a {
+            position: relative;
             display: inline-block;
             padding: 0 15px;
             height: 32px;
@@ -28,6 +29,42 @@
             &:hover {
                 background: #421a0f;
                 background: rgba(70, 20, 10, 0.9);
+
+                &:after {
+                    position: absolute;
+                    left: -50%;
+                    width: 70px;
+                    top: 38px;
+                    display: block;
+                    font-size: 12px;
+                    line-height: 1;
+                    color: white;
+                    text-transform: none;
+                }
+            }
+
+            &.socicon-facebook {
+                &:hover {
+                    &:after {
+                        content: "Facebook";
+                    }
+                }
+            }
+
+            &.socicon-twitter {
+                &:hover {
+                    &:after {
+                        content: "Twitter";
+                    }
+                }
+            }
+
+            &.socicon-instagram {
+                &:hover {
+                    &:after {
+                        content: "Instagram";
+                    }
+                }
             }
         }
 
