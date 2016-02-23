@@ -12,18 +12,18 @@
         <div class="info">
             <h2>Join us this Sunday</h2>
             <ul>
-                <?php if (get_theme_mod('church_address')){ ?>
+                <?php if (get_theme_mod('church_address')): ?>
                     <li class="church_address">
                         <h3>Worship with us:</h3>
                         <p><?=get_theme_mod('church_address')?></p>
                     </li>
-                <?php } ?>
-                <?php if (get_theme_mod('service_times')){ ?>
+                <?php endif ?>
+                <?php if (get_theme_mod('service_times')): ?>
                     <li class="service_times">
                         <h3>Service times:</h3>
                         <p><?=get_theme_mod('service_times')?></p>
                     </li>
-                <?php } ?>
+                <?php endif ?>
             </ul>
         </div>
 

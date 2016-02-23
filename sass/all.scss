@@ -1,6 +1,7 @@
 // Vendor
 @import "vendor/normalize";
 @import "vendor/html5-boilerplate";
+@import "vendor/socicon.scss";
 
 // Base
 @import "base/mixins";
@@ -23,4 +24,4 @@
 @import "blocks/sub_menu";
 @import "blocks/dynamic";
 @import "blocks/copyright";
-@import "blocks/church_social_sermon_archive";
+@import "blocks/sermon_archive";
