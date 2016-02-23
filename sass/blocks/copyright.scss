@@ -1,7 +1,7 @@
 .copyright {
     clear: both;
     overflow: hidden;
-    padding: 15px 0 25px 0;
+    margin: 15px 0 50px 0;
 
     p {
         margin: 0;
@@ -35,5 +35,20 @@
         .software {
             float: right;
         }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        float: left;
+        width: 540px;
+    }
+
+    @media only screen and (min-width: 980px) and (max-width: 1219px) {
+        float: left;
+        width: 680px;
+    }
+
+    @media only screen and (min-width: 1220px) {
+        float: left;
+        width: 900px;
     }
 }
