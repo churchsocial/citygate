@@ -34,6 +34,11 @@
                     <a href="<?=get_theme_mod('instagram')?>" target="_blank" class="socicon socicon-instagram"></a>
                 </li>
             <?php endif ?>
+            <?php if (get_theme_mod('livestream')): ?>
+                <li class="social">
+                    <a href="<?=get_theme_mod('livestream')?>" target="_blank" class="socicon socicon-youtube"></a>
+                </li>
+            <?php endif ?>
             <?php if (get_theme_mod('member_login')): ?>
                 <li class="login">
                     <a href="<?=get_theme_mod('member_login')?>">Member Login</a>

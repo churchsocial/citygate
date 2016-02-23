@@ -66,6 +66,14 @@
                     }
                 }
             }
+
+            &.socicon-youtube {
+                &:hover {
+                    &:after {
+                        content: "Livestream";
+                    }
+                }
+            }
         }
 
         &.social {

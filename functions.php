@@ -158,13 +158,23 @@ add_action('customize_register', function ($wp_customize) {
         ])
     );
 
+    $wp_customize->add_setting('livestream');
+    $wp_customize->add_control(
+        new WP_Customize_Control($wp_customize, 'livestream', [
+            'label' => 'Livestream',
+            'section' => 'social_media',
+            'settings' => 'livestream',
+            'priority' => 4,
+        ])
+    );
+
     $wp_customize->add_setting('member_login');
     $wp_customize->add_control(
         new WP_Customize_Control($wp_customize, 'member_login', [
             'label' => 'Member login',
             'section' => 'social_media',
             'settings' => 'member_login',
-            'priority' => 4,
+            'priority' => 5,
         ])
     );
 
