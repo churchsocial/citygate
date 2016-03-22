@@ -21,22 +21,22 @@
         <ul class="quick_links">
             <?php if (get_theme_mod('facebook')): ?>
                 <li class="social">
-                    <a href="<?=get_theme_mod('facebook')?>" target="_blank" class="socicon socicon-facebook"></a>
+                    <a href="<?=get_theme_mod('facebook')?>" class="socicon socicon-facebook"></a>
                 </li>
             <?php endif ?>
             <?php if (get_theme_mod('twitter')): ?>
                 <li class="social">
-                    <a href="<?=get_theme_mod('twitter')?>" target="_blank" class="socicon socicon-twitter"></a>
+                    <a href="<?=get_theme_mod('twitter')?>" class="socicon socicon-twitter"></a>
                 </li>
             <?php endif ?>
             <?php if (get_theme_mod('instagram')): ?>
                 <li class="social">
-                    <a href="<?=get_theme_mod('instagram')?>" target="_blank" class="socicon socicon-instagram"></a>
+                    <a href="<?=get_theme_mod('instagram')?>" class="socicon socicon-instagram"></a>
                 </li>
             <?php endif ?>
             <?php if (get_theme_mod('livestream')): ?>
                 <li class="social">
-                    <a href="<?=get_theme_mod('livestream')?>" target="_blank" class="socicon socicon-youtube"></a>
+                    <a href="<?=get_theme_mod('livestream')?>" class="socicon socicon-youtube"></a>
                 </li>
             <?php endif ?>
             <?php if (get_theme_mod('member_login')): ?>
