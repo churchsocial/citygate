@@ -1,16 +1,22 @@
 <?php
 
-// Register main menu
-register_nav_menu('main_menu', 'Main Menu');
+add_action('after_setup_theme', function () {
 
-// Register sidebars
-register_sidebar(['name' => 'Page']);
-register_sidebar(['name' => 'Blog']);
+    // Enable title tag support
+    add_theme_support('title-tag');
 
-// Register custom images sizes
-add_theme_support('post-thumbnails');
-add_image_size('banner_large', 900, 450, true);
-add_image_size('banner_small', 900, 260, true);
+    // Register main menu
+    register_nav_menu('main_menu', 'Main Menu');
+
+    // Register sidebars
+    register_sidebar(['name' => 'Page']);
+    register_sidebar(['name' => 'Blog']);
+
+    // Register custom images sizes
+    add_theme_support('post-thumbnails');
+    add_image_size('banner_large', 900, 450, true);
+    add_image_size('banner_small', 900, 260, true);
+});
 
 // Force upscaling of images
 add_filter(
