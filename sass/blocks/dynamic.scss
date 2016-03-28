@@ -20,7 +20,16 @@
 
         li
         {
+            font-size: 14px;
+            line-height: 1.25;
+
             margin: 5px 0;
+            padding: 8px 0;
+            border-bottom: solid 1px rgba(white, .2);
+
+            &:first-child {
+                border-top: solid 1px rgba(white, .2);
+            }
         }
     }
 
@@ -46,6 +55,7 @@
     {
         color: white;
         text-decoration: none;
+        font-weight: 700;
 
         &:hover
         {
