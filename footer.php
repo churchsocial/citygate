@@ -34,7 +34,7 @@
 
 </div>
 
-<script src="<?php bloginfo('template_url') ?>/js/all.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/all.js?v=<?=wp_get_theme()->get('Version')?>"></script>
 
 <?php wp_footer() ?>
 
