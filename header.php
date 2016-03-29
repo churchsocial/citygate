@@ -63,7 +63,7 @@
             <?=get_the_post_thumbnail($post->ID, is_front_page() ? 'banner_large' : 'banner_small') ?>
         </div>
 
-        <?php if (is_front_page()): ?>
+        <?php if (is_front_page() and (get_theme_mod('homepage_ad_left_img') or get_theme_mod('homepage_ad_middle_img') or get_theme_mod('homepage_ad_right_img'))): ?>
             <ul class="callouts">
                 <li class="ad left">
                     <?php if (get_theme_mod('homepage_ad_left_img')): ?>
