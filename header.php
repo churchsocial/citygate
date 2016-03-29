@@ -63,6 +63,44 @@
             <?=get_the_post_thumbnail($post->ID, is_front_page() ? 'banner_large' : 'banner_small') ?>
         </div>
 
+        <?php if (is_front_page()): ?>
+            <ul class="callouts">
+                <li class="ad left">
+                    <?php if (get_theme_mod('homepage_ad_left_img')): ?>
+                        <?php if (get_theme_mod('homepage_ad_left_url')): ?>
+                            <a href="<?=get_theme_mod('homepage_ad_left_url')?>">
+                                <?php echo wp_get_attachment_image(get_theme_mod('homepage_ad_left_img'), 'homepage_ad') ?>
+                            </a>
+                        <?php else: ?>
+                            <?php echo wp_get_attachment_image(get_theme_mod('homepage_ad_left_img'), 'homepage_ad') ?>
+                        <?php endif ?>
+                    <?php endif ?>
+                </li>
+                <li class="ad middle">
+                    <?php if (get_theme_mod('homepage_ad_middle_img')): ?>
+                        <?php if (get_theme_mod('homepage_ad_middle_url')): ?>
+                            <a href="<?=get_theme_mod('homepage_ad_middle_url')?>">
+                                <?php echo wp_get_attachment_image(get_theme_mod('homepage_ad_middle_img'), 'homepage_ad') ?>
+                            </a>
+                        <?php else: ?>
+                            <?php echo wp_get_attachment_image(get_theme_mod('homepage_ad_middle_img'), 'homepage_ad') ?>
+                        <?php endif ?>
+                    <?php endif ?>
+                </li>
+                <li class="ad right">
+                    <?php if (get_theme_mod('homepage_ad_right_img')): ?>
+                        <?php if (get_theme_mod('homepage_ad_right_url')): ?>
+                            <a href="<?=get_theme_mod('homepage_ad_right_url')?>">
+                                <?php echo wp_get_attachment_image(get_theme_mod('homepage_ad_right_img'), 'homepage_ad') ?>
+                            </a>
+                        <?php else: ?>
+                            <?php echo wp_get_attachment_image(get_theme_mod('homepage_ad_right_img'), 'homepage_ad') ?>
+                        <?php endif ?>
+                    <?php endif ?>
+                </li>
+            </ul>
+        <?php endif ?>
+
         <?=get_sub_menu()?>
 
         <div class="content">

@@ -16,6 +16,7 @@ add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
     add_image_size('banner_large', 900, 450, true);
     add_image_size('banner_small', 900, 260, true);
+    add_image_size('homepage_ad', 500, 245, true);
 });
 
 // Force upscaling of images
@@ -114,21 +115,6 @@ function get_sub_menu()
 // Setup custom theme options
 add_action('customize_register', function ($wp_customize) {
 
-    class WP_Textarea_Control extends WP_Customize_Control
-    {
-        public $type = 'textarea';
-        public $wrap = 'on';
-        public $rows;
-
-        public function render_content()
-        {
-            echo '<label>';
-            echo '<span class="customize-control-title">'.esc_html($this->label).'</span>';
-            echo '<textarea wrap="'.$this->wrap.'" rows="'.$this->rows.'" style="width:100%;" '.$this->get_link().'>'.esc_textarea($this->value()).'</textarea>';
-            echo '</label>';
-        }
-    }
-
     $wp_customize->add_section('social_media', [
         'title' => 'Social Media',
         'priority' => 1,
@@ -206,6 +192,83 @@ add_action('customize_register', function ($wp_customize) {
             'section' => 'join_us',
             'settings' => 'service_times',
             'priority' => 2,
+        ])
+    );
+
+    $wp_customize->add_section('homepage', [
+        'title' => 'Homepage',
+        'priority' => 3,
+    ]);
+
+    $wp_customize->add_setting('homepage_ad_left_img');
+    $wp_customize->add_control(
+        new WP_Customize_Cropped_Image_Control($wp_customize, 'homepage_ad_left_img', [
+            'label' => 'Left Ad Image',
+            'section' => 'homepage',
+            'settings' => 'homepage_ad_left_img',
+            'priority' => 1,
+            'flex_width' => false,
+            'flex_height' => false,
+            'width' => 500,
+            'height' => 245,
+        ])
+    );
+
+    $wp_customize->add_setting('homepage_ad_left_url');
+    $wp_customize->add_control(
+        new WP_Customize_Control($wp_customize, 'homepage_ad_left_url', [
+            'label' => 'Left Ad URL',
+            'section' => 'homepage',
+            'settings' => 'homepage_ad_left_url',
+            'priority' => 2,
+        ])
+    );
+
+    $wp_customize->add_setting('homepage_ad_middle_img');
+    $wp_customize->add_control(
+        new WP_Customize_Cropped_Image_Control($wp_customize, 'homepage_ad_middle_img', [
+            'label' => 'Middle Ad Image',
+            'section' => 'homepage',
+            'settings' => 'homepage_ad_middle_img',
+            'priority' => 3,
+            'flex_width' => false,
+            'flex_height' => false,
+            'width' => 500,
+            'height' => 245,
+        ])
+    );
+
+    $wp_customize->add_setting('homepage_ad_middle_url');
+    $wp_customize->add_control(
+        new WP_Customize_Control($wp_customize, 'homepage_ad_middle_url', [
+            'label' => 'Middle Ad URL',
+            'section' => 'homepage',
+            'settings' => 'homepage_ad_middle_url',
+            'priority' => 4,
+        ])
+    );
+
+    $wp_customize->add_setting('homepage_ad_right_img');
+    $wp_customize->add_control(
+        new WP_Customize_Cropped_Image_Control($wp_customize, 'homepage_ad_right_img', [
+            'label' => 'Right Ad Image',
+            'section' => 'homepage',
+            'settings' => 'homepage_ad_right_img',
+            'priority' => 5,
+            'flex_width' => false,
+            'flex_height' => false,
+            'width' => 500,
+            'height' => 245,
+        ])
+    );
+
+    $wp_customize->add_setting('homepage_ad_right_url');
+    $wp_customize->add_control(
+        new WP_Customize_Control($wp_customize, 'homepage_ad_right_url', [
+            'label' => 'Right Ad URL',
+            'section' => 'homepage',
+            'settings' => 'homepage_ad_right_url',
+            'priority' => 6,
         ])
     );
 });
