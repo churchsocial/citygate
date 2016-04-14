@@ -1,46 +1,68 @@
-.header .logo {
-    position: absolute;
-    font-family: 'Avenir Light';
-    color: white;
-    line-height: 100%;
-    text-decoration: none;
-    text-shadow: #3d0d07 1px 1px 0;
+.logo {
+    &.text {
+        display: block;
+        text-decoration: none;
 
-    &:hover {
-        border-bottom: dotted white 1px;
+        span {
+            font-family: 'Avenir Light';
+            color: white;
+            line-height: 1;
+            text-shadow: #3d0d07 1px 1px 0;
+            outline: 0;
+            font-size: 32px;
+            line-height: 1.1;
+        }
+
+        @media only screen and (max-width: 979px) {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 980px) {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            height: 130px;
+            width: 380px;
+            line-height: 130px;
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
     }
 
-    @media only screen and (max-width: 549px) {
-        width: 100%;
-        left: 0;
-        top: 70px;
-        text-align: center;
-        font-size: 28px;
-    }
+    &.image {
+        @media only screen and (max-width: 979px) {
+            img {
+                display: block;
+                margin: 25px auto;
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+        }
 
-    @media only screen and (min-width: 550px) and (max-width: 767px) {
-        width: 100%;
-        left: 0;
-        top: 80px;
-        text-align: center;
-        font-size: 30px;
-    }
+        @media only screen and (min-width: 980px) {
+            position: absolute;
+            left: 50px;
+            top: 25px;
+            height: 120px;
+            width: 400px;
+            font-size: 0;
 
-    @media only screen and (min-width: 768px) and (max-width: 979px) {
-        left: 25px;
-        top: 70px;
-        font-size: 30px;
-    }
+            .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
 
-    @media only screen and (min-width: 980px) and (max-width: 1219px) {
-        left: 25px;
-        top: 67px;
-        font-size: 34px;
-    }
-
-    @media only screen and (min-width: 1220px) {
-        left: 50px;
-        top: 65px;
-        font-size: 38px;
+            img {
+                vertical-align: middle;
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
     }
 }

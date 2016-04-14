@@ -1,5 +1,10 @@
 <?php
 
+// Set content width
+if (!isset($content_width)) {
+    $content_width = 840;
+}
+
 add_action('after_setup_theme', function () {
 
     // Enable title tag support
@@ -17,52 +22,48 @@ add_action('after_setup_theme', function () {
     add_image_size('banner_large', 900, 450, true);
     add_image_size('banner_small', 900, 260, true);
     add_image_size('homepage_ad', 500, 245, true);
+
+    // Force upscaling of images
+    add_filter(
+        'image_resize_dimensions',
+        function ($default, $orig_w, $orig_h, $new_w, $new_h, $crop) {
+            if (!$crop) {
+                return;
+            }
+
+            $aspect_ratio = $orig_w / $orig_h;
+            $size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
+
+            $crop_w = round($new_w / $size_ratio);
+            $crop_h = round($new_h / $size_ratio);
+
+            $s_x = floor(($orig_w - $crop_w) / 2);
+            $s_y = floor(($orig_h - $crop_h) / 2);
+
+            return [ 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h ];
+        },
+        10,
+        6
+    );
 });
 
-// Force upscaling of images
-add_filter(
-    'image_resize_dimensions',
-    function ($default, $orig_w, $orig_h, $new_w, $new_h, $crop) {
-        if (!$crop) {
-            return;
-        }
-
-        $aspect_ratio = $orig_w / $orig_h;
-        $size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
-
-        $crop_w = round($new_w / $size_ratio);
-        $crop_h = round($new_h / $size_ratio);
-
-        $s_x = floor(($orig_w - $crop_w) / 2);
-        $s_y = floor(($orig_h - $crop_h) / 2);
-
-        return [ 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h ];
-    },
-    10,
-    6
-);
-
-// Set content width
-if (!isset($content_width)) {
-    $content_width = 840;
+// Get main menu
+function get_main_menu($depth = 1)
+{
+    return wp_nav_menu([
+        'theme_location' => 'main_menu',
+        'depth' => $depth,
+        'container' => '',
+        'fallback_cb' => function () use ($depth) {
+            wp_nav_menu([
+                'depth' => $depth,
+                'container' => '',
+                'fallback_cb' => '',
+            ]);
+        },
+        'echo' => false,
+    ]);
 }
-
-// Setup sub menu
-add_filter('wp_nav_menu_objects', function ($sorted_menu_items) {
-    foreach ($sorted_menu_items as $menu_item) {
-        if (in_array('current_page_ancestor', $menu_item->classes, true) and $menu_item->menu_item_parent === 0) {
-            $GLOBALS['menu_item_id'] = $menu_item->ID;
-            break;
-        }
-        if (in_array('current-menu-item', $menu_item->classes, true)) {
-            $GLOBALS['menu_item_id'] = $menu_item->ID;
-            break;
-        }
-    }
-
-    return $sorted_menu_items;
-
-});
 
 // Setup sub menu
 add_filter('wp_nav_menu_objects', function ($sorted_menu_items) {
@@ -78,19 +79,24 @@ add_filter('wp_nav_menu_objects', function ($sorted_menu_items) {
     }
 
     return $sorted_menu_items;
-
 });
 
-// Generate sub menu
+// Get sub menu
 function get_sub_menu()
 {
     global $post;
     global $menu_item_id;
 
     $menu_items = [];
+    $locations = get_nav_menu_locations();
+    $main_menu_items = wp_get_nav_menu_items($locations['main_menu']);
 
-    foreach (wp_get_nav_menu_items('Main Menu') as $menu_item) {
-        if ((string) $menu_item->ID === (string) $menu_item_id or (string) $menu_item->menu_item_parent === (string) $menu_item_id) {
+    if (!$main_menu_items) {
+        return '';
+    }
+
+    foreach ($main_menu_items as $menu_item) {
+        if ((string) $menu_item->menu_item_parent === (string) $menu_item_id) {
             $menu_items[] = [
                 'url' => $menu_item->url,
                 'title' => $menu_item->title,
@@ -99,7 +105,7 @@ function get_sub_menu()
         }
     }
 
-    if (count($menu_items) === 1) {
+    if (count($menu_items) <= 1) {
         return '';
     }
 
@@ -269,6 +275,16 @@ add_action('customize_register', function ($wp_customize) {
             'section' => 'homepage',
             'settings' => 'homepage_ad_right_url',
             'priority' => 6,
+        ])
+    );
+
+    $wp_customize->add_setting('logo');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control($wp_customize, 'logo', [
+            'label' => 'Logo',
+            'section' => 'title_tagline',
+            'settings' => 'logo',
+            'priority' => 1,
         ])
     );
 });

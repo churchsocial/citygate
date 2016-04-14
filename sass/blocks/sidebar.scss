@@ -1,26 +1,143 @@
 .sidebar {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #393939;
+    font-size: 16px;
+    line-height: 150%;
     background: #8a8a8a url("../img/grey_noise_texture.png");
     outline: solid rgba(255, 255, 255, 0.1) 1px;
-    box-sizing: border-box;
     overflow: hidden;
 
-    @media only screen and (max-width: 549px) {
+    li {
+        margin: 35px 0;
+
+        h2 {
+            margin: 15px 0 5px 0;
+            font-family: 'Avenir Black';
+            color: #393939;
+            font-size: 20px;
+            line-height: 100%;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        ul {
+            list-style: none;
+            margin: 15px 0 25px 0;
+            padding: 0;
+
+            li {
+                font-size: 14px;
+                line-height: 1.25;
+                margin: 5px 0;
+                padding: 8px 0;
+                border-bottom: solid 1px rgba(white, 0.2);
+
+                &:first-child {
+                    border-top: solid 1px rgba(white, 0.2);
+                }
+            }
+        }
+
+        table {
+            width: 100%;
+            margin: 15px 0 25px 0;
+            border-collapse: collapse;
+
+            th {
+                font-family: MyriadProSemiBold;
+            }
+
+            th, td {
+                border: 1px solid rgba(#57443b, 0.2);
+                text-align: center;
+            }
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+
+        &.join_us_widget {
+            h3 {
+                margin: 0 0 3px 0;
+                color: white;
+                font-size: 16px;
+                text-decoration: none;
+                font-weight: 700;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        &.widget_search {
+            .searchform {
+                position: relative;
+                margin: 0 0 30px 0;
+                padding: 0;
+
+                label {
+                    display: none;
+                }
+
+                input[type="text"] {
+                    box-sizing: border-box;
+                    display: block;
+                    width: 100%;
+                    height: 30px;
+                    padding: 0 75px 0 15px;
+                    font-family: 'Avenir Black';
+                    line-height: 30px;
+                    font-size: 13px;
+                    color: #393939;
+                    border: none;
+                    outline: none;
+                    background: #bebebe;
+
+                    &:focus {
+                        background: lighten(#bebebe, 5%);
+                    }
+                }
+
+                input[type="submit"] {
+                    display: block;
+                    width: 75px;
+                    height: 30px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-family: 'Avenir Black';
+                    font-size: 12px;
+                    line-height: 30px;
+                    font-weight: normal;
+                    color: white;
+                    text-transform: uppercase;
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: #bebebe;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 979px) {
+        margin: 10px 0 0 0;
         padding: 0 15px 30px 15px;
-        margin: 0;
         text-align: center;
         border: none;
-    }
-
-    @media only screen and (min-width: 550px) and (max-width: 767px) {
-        padding: 0 25px 30px 25px;
-        margin: 0 0 20px 0;
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 979px) {
-        float: left;
-        width: 190px;
-        padding: 0 20px 30px 20px;
-        margin: 0 0 0 20px;
     }
 
     @media only screen and (min-width: 980px) and (max-width: 1219px) {

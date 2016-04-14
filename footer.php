@@ -1,31 +1,30 @@
         </div>
     </div>
 
-    <div class="sidebar">
+    <ul class="sidebar">
 
-        <div class="info">
-            <h2>Join us this Sunday</h2>
-            <ul>
-                <?php if (get_theme_mod('church_address')): ?>
-                    <li class="church_address">
-                        <h3>Worship with us:</h3>
-                        <p><?=get_theme_mod('church_address')?></p>
-                    </li>
-                <?php endif ?>
-                <?php if (get_theme_mod('service_times')): ?>
-                    <li class="service_times">
-                        <h3>Service times:</h3>
-                        <p><?=get_theme_mod('service_times')?></p>
-                    </li>
-                <?php endif ?>
-            </ul>
-        </div>
+        <?php if (get_theme_mod('church_address') or get_theme_mod('service_times')): ?>
+            <li class="join_us_widget">
+                <h2>Join us this Sunday</h2>
+                <ul>
+                    <?php if (get_theme_mod('church_address')): ?>
+                        <li>
+                            <h3>Our Location:</h3>
+                            <p><?=get_theme_mod('church_address')?></p>
+                        </li>
+                    <?php endif ?>
+                    <?php if (get_theme_mod('service_times')): ?>
+                        <li>
+                            <h3>Service Times:</h3>
+                            <p><?=get_theme_mod('service_times')?></p>
+                        </li>
+                    <?php endif ?>
+                </ul>
+            </li>
+        <?php endif ?>
 
-        <ul class="dynamic">
-            <?php dynamic_sidebar('Page') ?>
-        </ul>
-
-    </div>
+        <?php dynamic_sidebar('Page') ?>
+    </ul>
 
     <div class="copyright">
         <p class="church">&copy; Copyright <?=date('Y')?> <?php bloginfo('blogname')?></p>

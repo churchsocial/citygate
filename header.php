@@ -15,8 +15,6 @@
 <div class="header">
     <div class="center">
 
-        <a href="/" class="logo"><?php bloginfo('blogname')?></a>
-
         <ul class="quick_links">
             <?php if (get_theme_mod('facebook')): ?>
                 <li class="social">
@@ -45,12 +43,18 @@
             <?php endif ?>
         </ul>
 
-        <?php wp_nav_menu([
-            'theme_location' => 'main_menu',
-            'depth' => 1,
-            'menu_class' => 'menu',
-            'container' => '',
-        ]) ?>
+        <?php if (get_theme_mod('logo')): ?>
+            <a class="logo image" href="/">
+                <div class="helper"></div>
+                <img src="<?=get_theme_mod('logo')?>" alt="<?php bloginfo('blogname')?>">
+            </a>
+        <?php else: ?>
+            <a class="logo text" href="/">
+                <span><?php bloginfo('blogname')?></span>
+            </a>
+        <?php endif ?>
+
+        <?=get_main_menu(2)?>
 
     </div>
 </div>
@@ -59,8 +63,10 @@
 
     <div class="page">
 
-        <div class="banner <?php if (!has_post_thumbnail($post->ID)) echo 'missing' ?>">
-            <?=get_the_post_thumbnail($post->ID, is_front_page() ? 'banner_large' : 'banner_small') ?>
+        <div class="banner <?php if (!has_post_thumbnail($post->ID) or is_search()) echo 'missing' ?>">
+            <?php if (!is_search()): ?>
+                <?=get_the_post_thumbnail($post->ID, is_front_page() ? 'banner_large' : 'banner_small') ?>
+            <?php endif ?>
         </div>
 
         <?php if (is_front_page() and (get_theme_mod('homepage_ad_left_img') or get_theme_mod('homepage_ad_middle_img') or get_theme_mod('homepage_ad_right_img'))): ?>
@@ -101,6 +107,6 @@
             </ul>
         <?php endif ?>
 
-        <?=get_sub_menu()?>
-
         <div class="content">
+
+            <?=get_sub_menu()?>

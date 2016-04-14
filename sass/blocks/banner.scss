@@ -1,5 +1,4 @@
 .banner {
-
     &.missing {
         margin-top: 50px;
     }
@@ -11,7 +10,11 @@
         outline: solid rgba(255, 255, 255, 0.1) 1px;
     }
 
-    @media only screen and (min-width: 550px) {
+    @media only screen and (max-width: 979px) {
+        margin: 10px 0;
+    }
+
+    @media only screen and (min-width: 980px) {
         margin: 0 0 20px 0;
     }
 }

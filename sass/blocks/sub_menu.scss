@@ -1,7 +1,8 @@
-.page .sub_menu {
+.sub_menu {
     list-style: none;
-    margin: 15px 0;
-    padding: 0;
+    margin: 0;
+    padding: 12px 15px;
+    background: #aa3f28 url("../img/red_texture.png") center;
 
     li {
         display: inline-block;
@@ -9,12 +10,12 @@
 
         a {
             display: block;
-            color: #ccc;
+            color: #f3a18a;
             font-size: 13px;
-            line-height: 100%;
+            line-height: 1;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 2px;
+            outline: 0;
 
             &:hover {
                 color: white;

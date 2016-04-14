@@ -1,13 +1,10 @@
-.header .quick_links {
+.quick_links {
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 0;
 
     li {
-        display: block;
-        float: left;
-        margin: 0 0 0 5px;
 
         a {
             position: relative;
@@ -87,25 +84,25 @@
         }
     }
 
-    @media only screen and (max-width: 549px) {
-        position: absolute;
-        top: 15px;
-        left: 0;
-        width: 100%;
+    @media only screen and (max-width: 979px) {
         text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+            overflow: hidden;
+        }
     }
 
-    @media only screen and (min-width: 550px) and (max-width: 767px) {
+    @media only screen and (min-width: 980px) {
         position: absolute;
-        top: 25px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    @media only screen and (min-width: 768px) {
-        position: absolute;
-        top: 25px;
+        top: 35px;
         right: 10px;
+
+        li {
+            display: block;
+            float: left;
+            margin: 0 0 0 5px;
+        }
     }
 }
