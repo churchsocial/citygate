@@ -126,6 +126,29 @@
         margin-right: auto;
     }
 
+    table {
+        width: 100%;
+
+        th,
+        td {
+            text-align: left;
+            vertical-align: top;
+            border-bottom: solid 1px darken(white, 70%);
+        }
+
+        th {
+            padding: 5px 10px 5px 5px;
+            font-family: 'Avenir Black';
+            color: white;
+        }
+
+        td {
+            padding: 10px 10px 10px 5px;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+    }
+
     .wp-caption {
         background: #fff;
         border: 1px solid #f0f0f0;

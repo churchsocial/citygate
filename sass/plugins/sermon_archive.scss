@@ -60,23 +60,13 @@
     &__table_preached_time_header,
     &__table_title_header,
     &__table_author_header,
-    &__table_passage_header {
-        padding: 5px 0;
-        font-family: 'Avenir Black';
-        color: white;
-    }
+    &__table_passage_header {}
 
     &__table_date,
     &__table_preached_time,
     &__table_title,
     &__table_author,
-    &__table_passage {
-        border-top: solid 1px rgba(white, 0.1);
-        padding: 10px 15px 10px 0;
-        font-size: 14px;
-        line-height: 1.2;
-        vertical-align: top;
-    }
+    &__table_passage {}
 
     &__table_date {
         white-space: nowrap;
