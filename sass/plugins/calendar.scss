@@ -24,20 +24,22 @@
     &__table {
         width: 100%;
         margin: 0;
-        border: solid 1px darken(white, 70%);
+        border: solid 1px darken(white, 75%) !important;
     }
 
     &__day {
-        padding: 8px 8px 4px 8px;
+        padding: 8px 8px 4px 8px !important;
         width: 14.2857%;
-        vertical-align: top;
-        border: solid 1px darken(white, 70%);
+        border: solid 1px darken(white, 75%) !important;
+        background: rgba(black, 0.1);
     }
 
-    &__day--blank {}
+    &__day--blank {
+        background: transparent;
+    }
 
     &__day--today {
-        background: rgba(black, 0.05);
+        background: rgba(black, 0.25);
     }
 
     &__day_wrap {

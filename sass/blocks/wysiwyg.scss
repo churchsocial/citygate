@@ -127,6 +127,7 @@
     }
 
     table {
+        margin: 25px 0;
         width: 100%;
 
         th,
@@ -146,6 +147,7 @@
             padding: 10px 10px 10px 5px;
             font-size: 14px;
             line-height: 1.2;
+            border-top: solid 1px darken(white, 70%);
         }
     }
 
