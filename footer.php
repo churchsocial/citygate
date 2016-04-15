@@ -1,4 +1,8 @@
         </div>
+        <div class="copyright first">
+            <p class="church">&copy; Copyright <?=date('Y')?> <?php bloginfo('blogname')?></p>
+            <p class="software">Powered by <a href="http://churchsocialapp.com" title="Church Management Software">Church Social</a>.</p>
+        </div>
     </div>
 
     <ul class="sidebar">
@@ -26,7 +30,7 @@
         <?php dynamic_sidebar('Page') ?>
     </ul>
 
-    <div class="copyright">
+    <div class="copyright second">
         <p class="church">&copy; Copyright <?=date('Y')?> <?php bloginfo('blogname')?></p>
         <p class="software">Powered by <a href="http://churchsocialapp.com" title="Church Management Software">Church Social</a>.</p>
     </div>

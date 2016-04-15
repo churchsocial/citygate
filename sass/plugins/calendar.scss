@@ -34,9 +34,7 @@
         border: solid 1px darken(white, 70%);
     }
 
-    &__day--blank {
-
-    }
+    &__day--blank {}
 
     &__day--today {
         background: rgba(black, 0.05);
@@ -59,48 +57,27 @@
         line-height: 1.2;
     }
 
-    &__event_link {
+    &__event_link {}
 
-    }
+    &__event_title {}
 
-    &__event_title {
+    &__event_sub_title {}
 
-    }
+    &__event_sub_title--date {}
 
-    &__event_sub_title {
+    &__event_details {}
 
-    }
+    &__event_details--date {}
 
-    &__event_sub_title--date {
+    &__event_sub_title--location {}
 
-    }
+    &__event_details--location {}
 
-    &__event_details {
+    &__event_sub_title--description {}
 
-    }
+    &__event_details--description {}
 
-    &__event_details--date {
-
-    }
-
-    &__event_sub_title--location {
-
-    }
-
-    &__event_details--location {
-
-    }
-
-    &__event_sub_title--description {
-
-    }
-
-    &__event_details--description {
-
-    }
-
-    &__event_buttons {
-    }
+    &__event_buttons {}
 
     &__event_back_button {
         @extend .button;

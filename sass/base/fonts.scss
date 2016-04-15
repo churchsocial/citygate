@@ -1,21 +1,15 @@
 @font-face {
     font-family: 'Avenir Black';
-    src: url('../fonts/avenir_black.eot');
-    src: url('../fonts/avenir_black.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/avenir_black.woff') format('woff'),
-         url('../fonts/avenir_black.ttf') format('truetype'),
-         url('../fonts/avenir_black.svg#avenir_lt_std_65_mediumbold') format('svg');
+    src: url("../fonts/avenir_black.eot");
+    src: url("../fonts/avenir_black.eot?#iefix") format("embedded-opentype"), url("../fonts/avenir_black.woff") format("woff"), url("../fonts/avenir_black.ttf") format("truetype"), url("../fonts/avenir_black.svg#avenir_lt_std_65_mediumbold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avenir Light';
-    src: url('../fonts/avenir_light.eot');
-    src: url('../fonts/avenir_light.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/avenir_light.woff') format('woff'),
-         url('../fonts/avenir_light.ttf') format('truetype'),
-         url('../fonts/avenir_light.svg#avenir_lt_std_35_lightregular') format('svg');
+    src: url("../fonts/avenir_light.eot");
+    src: url("../fonts/avenir_light.eot?#iefix") format("embedded-opentype"), url("../fonts/avenir_light.woff") format("woff"), url("../fonts/avenir_light.ttf") format("truetype"), url("../fonts/avenir_light.svg#avenir_lt_std_35_lightregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
