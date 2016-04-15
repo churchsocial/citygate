@@ -1,8 +1,7 @@
 <?php get_header() ?>
 
-<h1>404: Page Not Found</h1>
-
 <div class="wysiwyg">
+    <h1>404: Page Not Found</h1>
     <p>Sorry, but that page doesn't exist.</p>
 </div>
 
